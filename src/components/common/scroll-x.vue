@@ -6,9 +6,42 @@
       </div>
       <div class="content">
           <ul>
-              <li>1234</li>
-              <li>1243</li>
-              <li>234</li>
+              <li>
+                  <img src="../../assets/images/avatar.jpg" alt="">
+                  <div class="goodsDesc">
+                      <p>￥79.00<span>/箱</span></p>
+                  </div>
+              </li>
+              <li>
+                  <img src="../../assets/images/avatar.jpg" alt="">
+                  <div class="goodsDesc">
+                      <p>￥79.00<span>/箱</span></p>
+                  </div>
+              </li>
+              <li>
+                  <img src="../../assets/images/avatar.jpg" alt="">
+                  <div class="goodsDesc">
+                      <p>￥79.00<span>/箱</span></p>
+                  </div>
+              </li>
+              <li>
+                  <img src="../../assets/images/avatar.jpg" alt="">
+                  <div class="goodsDesc">
+                      <p>￥79.00<span>/箱</span></p>
+                  </div>
+              </li>
+              <li>
+                  <img src="../../assets/images/avatar.jpg" alt="">
+                  <div class="goodsDesc">
+                      <p>￥79.00<span>/箱</span></p>
+                  </div>
+              </li>
+              <li>
+                  <img src="../../assets/images/avatar.jpg" alt="">
+                  <div class="goodsDesc">
+                      <p>￥79.00<span>/箱</span></p>
+                  </div>
+              </li>
           </ul>
       </div>
   </div>
@@ -23,9 +56,10 @@ export default {
 <style scoped>
 .scroll-x {
     width: 100%;
-    height: 200px;
+    height: 260px;
     margin-top: 200px;
     outline: 1px solid red;
+    overflow-x: scroll;
 }
 .title {
     width: 100%;
@@ -46,11 +80,23 @@ export default {
 }
 .content {
     width: 100%;
-    display: none;
+    overflow-x: scroll;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    width: 1000px;
+    height: 500px;
 }
 li {
-    width: 50px;
-    height: 50px;
+    list-style: none;
+    width: 120px;
+    height: 100%;
+    margin-right: 10px;
+    float: left;
     outline: 1px solid black;
+}
+li img {
+    width: 100%;
 }
 </style>
