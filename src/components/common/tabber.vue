@@ -12,7 +12,8 @@
           <hm-sort></hm-sort>
         </mt-tab-container-item>
         <mt-tab-container-item id="购物车">
-          <mt-cell v-for="n in 7" :key="n" :title="'购物车 ' + n" />
+          <!-- <mt-cell v-for="n in 7" :key="n" :title="'购物车 ' + n" /> -->
+          <hm-cart></hm-cart>
         </mt-tab-container-item>
         <mt-tab-container-item id="我的">
             <!-- <mt-cell v-for="n in 12" :key="n" :title="'我的 ' + n" /> -->
@@ -46,6 +47,7 @@
 import Home from '@/components/pages/home'
 import Sort from '@/components/pages/sort'
 import Mine from '@/components/pages/mine'
+import Cart from '@/components/pages/cart'
 
 export default {
   name: 'page-tabbar',
@@ -57,7 +59,8 @@ export default {
   components: {
     'hm-home': Home,
     'hm-sort': Sort,
-    'hm-mine': Mine
+    'hm-mine': Mine,
+    'hm-cart': Cart
   }
 };
 </script>
