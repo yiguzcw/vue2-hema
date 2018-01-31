@@ -10,7 +10,8 @@
                   <img v-bind:src="good.image" alt="">
                   <p>{{good.name}}</p>
                   <div class="goodsDesc">
-                      <p>￥{{good.price}}<span>/{{good.unit}}</span></p>
+                      <a>￥{{good.price}}<span>/{{good.unit}}</span></a>
+                      <a class="add">+</a>
                   </div>
               </li>
           </ul>
@@ -87,5 +88,12 @@ p {
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 15px;
+}
+.add {
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 50%;
+    background-color: #23a3ff;
+    color: #ffffff;
 }
 </style>
