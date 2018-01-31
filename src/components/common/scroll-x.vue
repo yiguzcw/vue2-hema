@@ -6,40 +6,11 @@
       </div>
       <div class="content">
           <ul>
-              <li>
-                  <img src="../../assets/images/avatar.jpg" alt="">
+              <li v-for="(good, index) in scrollGoods" :key="index">
+                  <img v-bind:src="good.image" alt="">
+                  <p>{{good.name}}</p>
                   <div class="goodsDesc">
-                      <p>￥79.00<span>/箱</span></p>
-                  </div>
-              </li>
-              <li>
-                  <img src="../../assets/images/avatar.jpg" alt="">
-                  <div class="goodsDesc">
-                      <p>￥79.00<span>/箱</span></p>
-                  </div>
-              </li>
-              <li>
-                  <img src="../../assets/images/avatar.jpg" alt="">
-                  <div class="goodsDesc">
-                      <p>￥79.00<span>/箱</span></p>
-                  </div>
-              </li>
-              <li>
-                  <img src="../../assets/images/avatar.jpg" alt="">
-                  <div class="goodsDesc">
-                      <p>￥79.00<span>/箱</span></p>
-                  </div>
-              </li>
-              <li>
-                  <img src="../../assets/images/avatar.jpg" alt="">
-                  <div class="goodsDesc">
-                      <p>￥79.00<span>/箱</span></p>
-                  </div>
-              </li>
-              <li>
-                  <img src="../../assets/images/avatar.jpg" alt="">
-                  <div class="goodsDesc">
-                      <p>￥79.00<span>/箱</span></p>
+                      <p>￥{{good.price}}<span>/{{good.unit}}</span></p>
                   </div>
               </li>
           </ul>
@@ -48,18 +19,30 @@
 </template>
 
 <script>
-export default {
+import axios from 'axios'
 
+export default {
+    data() {
+        return {
+            scrollGoods: []
+        }
+    },
+    mounted: function() {
+        axios.get('https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/getIndexScrollX')
+        .then(response => this.scrollGoods = response.data.data.goods)
+        .catch(error => console.log(error))
+    }
 }
 </script>
 
 <style scoped>
 .scroll-x {
     width: 100%;
-    height: 260px;
+    height: 300px;
     margin-top: 200px;
-    outline: 1px solid red;
+    border-top: 1px solid #23a3ff;
     overflow-x: scroll;
+    margin-left: -1px;
 }
 .title {
     width: 100%;
@@ -67,7 +50,7 @@ export default {
     padding: 5px;
     font-size: 16px;
     font-weight: bold;
-    outline: 1px solid purple;
+    border-bottom: 1px solid #999;
 }
 .left {
     float: left;
@@ -94,9 +77,15 @@ li {
     height: 100%;
     margin-right: 10px;
     float: left;
-    outline: 1px solid black;
+    outline: 1px solid #999;
 }
 li img {
     width: 100%;
+}
+p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 15px;
 }
 </style>
