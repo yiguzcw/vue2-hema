@@ -5,9 +5,11 @@
     </mt-header>
     <div class="content">
         <ul>
-            <li v-for="(sort, index) in sorts" :key="index">
-                <img v-bind:src="sort.imageSrc" />
-                <p>{{sort.text}}</p>
+            <li v-for="(sort, index) in sorts" :key="index"> 
+                <router-link to="/sort/goodsList">
+                    <img v-bind:src="sort.imageSrc" />
+                    <p>{{sort.text}}</p>
+                </router-link>
             </li>
         </ul>
     </div>

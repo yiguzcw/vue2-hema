@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png">
-    <router-view/> -->
-    <hm-tabber></hm-tabber>
+    <!-- <img src="./assets/logo.png"> -->
+    <router-view/>
+    <!-- <hm-tabber></hm-tabber> -->
   </div>
 </template>
 
