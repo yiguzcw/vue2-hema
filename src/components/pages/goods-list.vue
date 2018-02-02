@@ -2,44 +2,46 @@
   <div class="goods-list">
 
     <div class="header">
-      <mt-header title="我是分类名">
+      <mt-header :title="$route.params.sort">
         <router-link to="/" slot="left">
           <mt-button icon="back"></mt-button>
         </router-link>
       </mt-header>
     </div>
 
-    <div class="cell">
+    <div class="cell" v-for="(good, index) in goods" :key="index">
       <div class="image left">
-        <img src="../../assets/images/avatar.jpg" alt="">
+        <img v-bind:src="good.image" alt="">
       </div>
       <div class="content left">
-        <P class="title">我是测试文字我是测试文字我是测试文字我是测试文字我是测试文字我是测试文字我是测试文字我是测试文字</P>
-        <a class="price"><span class="red">￥999.00</span>/袋</a>
+        <P class="title">{{good.name}}</P>
+        <a class="price"><span class="red">￥{{good.price}}</span>/{{good.unit}}</a>
       </div>
       <div class="add left">
         <div class="circle">+</div>
       </div>
     </div>
 
-    <div class="cell">
-      <div class="image left">
-        <img src="../../assets/images/avatar.jpg" alt="">
-      </div>
-      <div class="content left">
-        <P class="title">我是测试文字我是测试文字我是测试文字我是测试文字我是测试文字我是测试文字我是测试文字我是测试文字</P>
-        <a class="price"><span class="red">￥999.00</span>/袋</a>
-      </div>
-      <div class="add left">
-        <div class="circle">+</div>
-      </div>
-    </div>
 
   </div>
 </template>
 
 <script>
-export default {};
+import axios from 'axios'
+
+export default {
+  data() {
+    return {
+      goods: []
+    }
+  },
+  created: function() {
+    const id = this.$route.params.id;
+    axios.get('https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/getGoods')
+    .then(response => this.goods = response.data.data[id])
+    .catch(error => console.log(error))
+  }
+};
 </script>
 
 <style scoped>

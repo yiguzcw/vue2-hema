@@ -6,7 +6,7 @@
     <div class="content">
         <ul>
             <li v-for="(sort, index) in sorts" :key="index"> 
-                <router-link to="/sort/goodsList">
+                <router-link :to="{name:'goodsList',params:{sort:sort.text,id:index}}">
                     <img v-bind:src="sort.imageSrc" />
                     <p>{{sort.text}}</p>
                 </router-link>
@@ -51,5 +51,8 @@ li:nth-child(3n) {
 img {
     width: 80px;
     height: 80px;
+}
+p {
+    text-decoration: none;
 }
 </style>

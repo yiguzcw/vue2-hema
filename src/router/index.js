@@ -13,7 +13,7 @@ export default new Router({
       name: 'tabber',
       component: Tabber
     },{
-      path: '/sort',
+      path: '/goodsList',
       name: 'goodsList',
       component: GoodsList
     }
