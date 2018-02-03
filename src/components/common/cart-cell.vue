@@ -2,13 +2,13 @@
     <div class="cartCell">
         <div class="cell">
 
-            <div class="icon left">
+            <div class="icon left" v-for="(product, index) in products" :key="index">
                 <img src="../../assets/icons/good-sel.png" alt="">
             </div>
             <div class="content left">
                 <img src="../../assets/images/avatar.jpg" alt="">
-                <p class="title">超级超级超级超级超级超级超级超级超级超级超级</p>
-                <p class="price red">￥9999</p>
+                <p class="title">{{product.name}}</p>
+                <p class="price red">￥{{product.price}}</p>
             </div>
             <div class="num left">
                 <ul>
@@ -57,6 +57,15 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
+export default {
+    computed: {
+        ...mapGetters({
+            products: 'cartProducts'
+        })
+    }
+}
 
 </script>
 

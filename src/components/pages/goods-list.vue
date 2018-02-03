@@ -18,7 +18,7 @@
         <a class="price"><span class="red">￥{{good.price}}</span>/{{good.unit}}</a>
       </div>
       <div class="add left">
-        <div class="circle">+</div>
+        <div class="circle" @click="addToCart(good)">+</div>
       </div>
     </div>
 
@@ -28,7 +28,7 @@
 
 <script>
 import axios from 'axios'
-import shop from '../../store/index'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   data() {
@@ -41,7 +41,11 @@ export default {
     axios.get('https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/getGoods')
     .then(response => this.goods = response.data.data[id])
     .catch(error => console.log(error))
-    console.log(shop)
+  },
+  methods: {
+    addToCart: mapActions([
+        'addToCart'
+    ])
   }
 };
 </script>

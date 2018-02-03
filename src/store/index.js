@@ -1,11 +1,43 @@
-import axios from 'axios'
+import Vue from 'vue'
+import Vuex from 'vuex'
+import * as types from './mutation-types'
 
-var shop = ''
+Vue.use(Vuex);
 
-axios.get('https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/getGoods')
-.then(response => shop = response)
-.catch(error => console.log(error))
-
-export default {
-    shop
+const state = {
+    cart: []
 }
+
+const getters = {
+    cartProducts: (state, getters, rootState) => {
+        return state.cart
+    }
+}
+
+const mutations = {
+    [types.ADD_TO_CART] (state, product) {
+        // 通过传商品的name  到购物车中找出商品
+        const record = state.cart.find(good => good.name === product.name)
+        if(!record) {
+            state.cart.push({
+                product,
+                quantity: 1
+            })
+        } else {
+            record.quantity++
+        }
+    }
+}
+
+const actions = {
+    addToCart: ({ commit }, product) => {
+        commit(types.ADD_TO_CART, product)
+    }
+}
+
+export default new Vuex.Store({
+    state, 
+    mutations, 
+    getters, 
+    actions
+})
