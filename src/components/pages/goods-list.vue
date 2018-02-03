@@ -28,6 +28,7 @@
 
 <script>
 import axios from 'axios'
+import shop from '../../store/index'
 
 export default {
   data() {
@@ -40,6 +41,7 @@ export default {
     axios.get('https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/getGoods')
     .then(response => this.goods = response.data.data[id])
     .catch(error => console.log(error))
+    console.log(shop)
   }
 };
 </script>
