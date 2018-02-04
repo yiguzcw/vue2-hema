@@ -43,6 +43,11 @@ const mutations = {
         } else {
             item.quantity --
         }
+    },
+    [types.DELETE_PRODUCT] (state, product) {
+        const item = state.cart.find(good => good.product.name === product.product.name)
+        const newCart = state.cart.filter(good => good.product.name != product.product.name)
+        state.cart = newCart
     }
 }
 
@@ -55,6 +60,9 @@ const actions = {
     },
     reduce: ({ commit }, product) => {
         commit(types.REDUCE_PRODUCT, product)
+    },
+    delProduct: ({ commit }, product) => {
+        commit(types.DELETE_PRODUCT, product)
     }
 }
 

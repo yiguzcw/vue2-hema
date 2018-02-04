@@ -2,7 +2,7 @@
     <div class="cartCell">
         <div class="cell" v-for="(product, index) in products" :key="index">
 
-            <div class="icon left">
+            <div class="icon left" @click="delProduct(product)">
                 <img src="../../assets/icons/good-sel.png" alt="">
             </div>
             <div class="content left">
@@ -22,12 +22,9 @@
 
         <div class="CartCount">
             <div class="icon">
-                <img src="../../assets/icons/good-sel.png" alt="">
-            </div>
-            <div class="content lh44">
-                <span class="left">全选</span>
                 <span class="right red">￥{{total}}</span>
             </div>
+            <div class="content lh44"></div>
             <div class="num">
                 <mt-button type="primary">结算</mt-button>
             </div>
@@ -48,7 +45,7 @@ export default {
     },
     methods: {
         ...mapActions([
-            'add', 'reduce'
+            'add', 'reduce', 'delProduct'
         ])
     }
 }
