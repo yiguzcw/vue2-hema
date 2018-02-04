@@ -11,7 +11,7 @@
                   <p>{{good.name}}</p>
                   <div class="goodsDesc">
                       <a>￥{{good.price}}<span>/{{good.unit}}</span></a>
-                      <a class="add">+</a>
+                      <mt-button class="add" @click="addToCart(good)">+</mt-button>
                   </div>
               </li>
           </ul>
@@ -21,6 +21,7 @@
 
 <script>
 import axios from 'axios'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
     data() {
@@ -32,6 +33,11 @@ export default {
         axios.get('https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/getIndexScrollX')
         .then(response => this.scrollGoods = response.data.data.goods)
         .catch(error => console.log(error))
+    },
+    methods: {
+        ...mapActions([
+            'addToCart'
+        ])
     }
 }
 </script>
@@ -69,7 +75,7 @@ export default {
 ul {
     margin: 0;
     padding: 0;
-    width: 1000px;
+    width: 910px;
     height: 500px;
 }
 li {
@@ -91,7 +97,7 @@ p {
 }
 .add {
     display: inline-block;
-    padding: 2px 4px;
+    padding: 0 8px;
     border-radius: 50%;
     background-color: #23a3ff;
     color: #ffffff;
