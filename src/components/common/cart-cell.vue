@@ -12,9 +12,9 @@
             </div>
             <div class="num left">
                 <ul>
-                    <li>-</li>
+                    <li @click="reduce(product)">-</li>
                     <li class="priceNum">{{product.quantity}}</li>
-                    <li>+</li>
+                    <li @click="add(product)">+</li>
                 </ul>
             </div>
 
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
     computed: {
@@ -46,9 +46,9 @@ export default {
         })
     },
     methods: {
-        outPut: function(){
-
-        }
+        ...mapActions([
+            'add', 'reduce'
+        ])
     }
 }
 

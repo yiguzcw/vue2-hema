@@ -41,9 +41,11 @@ export default {
     .then(response => this.goods = response.data.data[id])
     .catch(error => console.log(error))
   },
-  methods: mapActions([
-    'addToCart'
-  ])
+  methods: {
+      ...mapActions([
+        'addToCart'
+    ])
+  }
 };
 </script>
 

@@ -27,12 +27,30 @@ const mutations = {
         } else {
             record.quantity++
         }
+    },
+    [types.ADD_PRODUCT] (state, product) {
+        const item = state.cart.find(good => good.product.name === product.product.name)
+        item.quantity ++
+    },
+    [types.REDUCE_PRODUCT] (state, product) {
+        const item = state.cart.find(good => good.product.name === product.product.name)
+        if(item.quantity <= 1) {
+            item.quantity = 1
+        } else {
+            item.quantity --
+        }
     }
 }
 
 const actions = {
     addToCart: ({ commit }, product) => {
         commit(types.ADD_TO_CART, product)
+    },
+    add: ({ commit }, product) => {
+        commit(types.ADD_PRODUCT, product)
+    },
+    reduce: ({ commit }, product) => {
+        commit(types.REDUCE_PRODUCT, product)
     }
 }
 
