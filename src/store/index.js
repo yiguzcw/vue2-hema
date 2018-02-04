@@ -10,8 +10,12 @@ const state = {
 
 const getters = {
     cartProducts: (state, getters, rootState) => {
-        console.log(state.cart)
         return state.cart
+    },
+    cartTotalPrice: (state, getters) => {
+        return getters.cartProducts.reduce((total, product) => {
+            return total + product.product.price * product.quantity
+        }, 0)
     }
 }
 

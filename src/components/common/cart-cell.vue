@@ -26,7 +26,7 @@
             </div>
             <div class="content lh44">
                 <span class="left">全选</span>
-                <span class="right red">￥9999</span>
+                <span class="right red">￥{{total}}</span>
             </div>
             <div class="num">
                 <mt-button type="primary">结算</mt-button>
@@ -42,7 +42,8 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
     computed: {
         ...mapGetters({
-            products: 'cartProducts'
+            products: 'cartProducts',
+            total: 'cartTotalPrice' 
         })
     },
     methods: {
