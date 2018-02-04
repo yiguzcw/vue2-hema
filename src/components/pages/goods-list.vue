@@ -18,11 +18,9 @@
         <a class="price"><span class="red">￥{{good.price}}</span>/{{good.unit}}</a>
       </div>
       <div class="add left">
-        <div class="circle" @click="addToCart(good)">+</div>
+        <mt-button type="primary" class="circle" @click="addToCart(good)">+</mt-button>
       </div>
     </div>
-
-
   </div>
 </template>
 
@@ -37,16 +35,15 @@ export default {
     }
   },
   created: function() {
+    // 获取路由传过来的id  判断用户点击的分类
     const id = this.$route.params.id;
     axios.get('https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/getGoods')
     .then(response => this.goods = response.data.data[id])
     .catch(error => console.log(error))
   },
-  methods: {
-    addToCart: mapActions([
-        'addToCart'
-    ])
-  }
+  methods: mapActions([
+    'addToCart'
+  ])
 };
 </script>
 
@@ -93,7 +90,7 @@ img {
   bottom: 0;
   right: 0;
   display: inline-block;
-  padding: 5px 10px;
+  padding: 10px 10px;
   border-radius: 50%;
   font-size: 20px;
   background-color: #23a3ff;

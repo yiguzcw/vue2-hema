@@ -10,6 +10,7 @@ const state = {
 
 const getters = {
     cartProducts: (state, getters, rootState) => {
+        console.log(state.cart)
         return state.cart
     }
 }

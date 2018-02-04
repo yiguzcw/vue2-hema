@@ -1,39 +1,19 @@
 <template>
     <div class="cartCell">
-        <div class="cell">
-
-            <div class="icon left" v-for="(product, index) in products" :key="index">
-                <img src="../../assets/icons/good-sel.png" alt="">
-            </div>
-            <div class="content left">
-                <img src="../../assets/images/avatar.jpg" alt="">
-                <p class="title">{{product.name}}</p>
-                <p class="price red">￥{{product.price}}</p>
-            </div>
-            <div class="num left">
-                <ul>
-                    <li>-</li>
-                    <li>12</li>
-                    <li>+</li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="cell">
+        <div class="cell" v-for="(product, index) in products" :key="index">
 
             <div class="icon left">
                 <img src="../../assets/icons/good-sel.png" alt="">
             </div>
             <div class="content left">
-                <img src="../../assets/images/avatar.jpg" alt="">
-                <p class="title">超级超级超级超级超级超级超级超级超级超级超级</p>
-                <p class="price red">￥9999</p>
+                <img v-bind:src="product.product.image" alt="">
+                <p class="title">{{product.product.name}}</p>
+                <p class="price red">￥{{product.product.price}}</p>
             </div>
             <div class="num left">
                 <ul>
                     <li>-</li>
-                    <li>12</li>
+                    <li class="priceNum">{{product.quantity}}</li>
                     <li>+</li>
                 </ul>
             </div>
@@ -64,6 +44,11 @@ export default {
         ...mapGetters({
             products: 'cartProducts'
         })
+    },
+    methods: {
+        outPut: function(){
+
+        }
     }
 }
 
@@ -100,6 +85,9 @@ li {
     -webkit-tap-highlight-color: transparent; 
     max-width: 21px;
     overflow: hidden;
+}
+.priceNum {
+    width: 21px;
 }
 .icon {
     width: 8%;
