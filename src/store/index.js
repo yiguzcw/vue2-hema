@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import * as types from './mutation-types'
+import { Toast } from 'mint-ui'
 
 Vue.use(Vuex);
 
@@ -53,6 +54,10 @@ const mutations = {
 
 const actions = {
     addToCart: ({ commit }, product) => {
+        Toast({
+            message: '成功加入购物车',
+            duration: 1000
+        })
         commit(types.ADD_TO_CART, product)
     },
     add: ({ commit }, product) => {
