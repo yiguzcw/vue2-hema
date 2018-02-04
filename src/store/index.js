@@ -18,7 +18,7 @@ const getters = {
 const mutations = {
     [types.ADD_TO_CART] (state, product) {
         // 通过传商品的name  到购物车中找出商品
-        const record = state.cart.find(good => good.name === product.name)
+        const record = state.cart.find(good => good.product.name === product.name)
         if(!record) {
             state.cart.push({
                 product,
