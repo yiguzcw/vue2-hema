@@ -42,7 +42,7 @@ ul {
 li {
     cursor: pointer;
     margin-top: 40px;
-    margin-right: 20px;
+    margin-right: 6%;
     float: left;
 }
 li:nth-child(3n) {

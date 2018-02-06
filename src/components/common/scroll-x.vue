@@ -45,7 +45,7 @@ export default {
 <style scoped>
 .scroll-x {
     width: 100%;
-    height: 300px;
+    height: 320px;
     margin-top: 200px;
     border-top: 1px solid #23a3ff;
     overflow-x: scroll;
@@ -75,8 +75,8 @@ export default {
 ul {
     margin: 0;
     padding: 0;
-    width: 910px;
-    height: 500px;
+    width: 980px;
+    height: 280px;
 }
 li {
     list-style: none;
