@@ -80,7 +80,7 @@ ul {
 }
 li {
     list-style: none;
-    width: 120px;
+    width: 130px;
     height: 100%;
     margin-right: 10px;
     float: left;

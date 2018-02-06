@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-      <router-link to="/search">
-          <mt-search class="search" cancel-text="取消" placeholder="搜索"></mt-search>
-      </router-link>
+      <mt-search class="search" cancel-text="取消" placeholder="搜索"></mt-search>
       <hm-swipper></hm-swipper>
       <home-sort></home-sort>
       <scroll-x></scroll-x>
