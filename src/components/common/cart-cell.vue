@@ -29,7 +29,7 @@
                 <mt-button type="primary">结算</mt-button>
             </div>
         </div>
-
+        <p>{{alive}}</p>
     </div>
 </template>
 
@@ -41,7 +41,15 @@ export default {
         ...mapGetters({
             products: 'cartProducts',
             total: 'cartTotalPrice' 
-        })
+        }),
+        alive: function() {
+            if(this.products.length > 0) {
+                console.log(this.products)
+                return true
+            } else {
+                return false
+            }
+        }
     },
     methods: {
         ...mapActions([

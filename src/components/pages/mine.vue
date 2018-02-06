@@ -65,11 +65,11 @@
             </li>
             <li>
                 <img src="../../assets/icons/store.png" alt="">
-                <p>盒马门店</p>
+                <p>门店</p>
             </li>
             <li>
                 <img src="../../assets/icons/exchange.png" alt="">
-                <p>兑换优惠券</p>
+                <p>优惠券</p>
             </li>
             <li>
                 <img src="../../assets/icons/package.png" alt="">
