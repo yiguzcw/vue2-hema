@@ -113,7 +113,6 @@ export default {
     height: 90px;
     margin-top: -35px;
     padding: 5px;
-    border: 1px solid #26a2ff;
 }
 .info-detail {
     clear: both;
@@ -178,6 +177,5 @@ export default {
     margin-top: 15px;
     width: 100%;
     height: 150px;;
-    border: 1px solid #26a2ff;
 }
 </style>

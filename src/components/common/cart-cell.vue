@@ -32,7 +32,7 @@
 
         <div v-if="!exist" class="empty">
             <img src="../../assets/icons/shopping-sel.png" alt="">
-            <p>购物车还没有东西呢，赶紧逛逛吧</p>
+            <p>购物车空空如也，赶紧逛逛吧</p>
         </div>
     </div>
 </template>
