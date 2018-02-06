@@ -20,7 +20,7 @@
 
         </div>
 
-        <div class="CartCount">
+        <div v-if="exist" class="CartCount">
             <div class="icon">
                 <span class="right red">￥{{total}}</span>
             </div>
@@ -29,7 +29,11 @@
                 <mt-button type="primary">结算</mt-button>
             </div>
         </div>
-        <p>{{alive}}</p>
+
+        <div v-if="!exist" class="empty">
+            <img src="../../assets/icons/shopping-sel.png" alt="">
+            <p>购物车还没有东西呢，赶紧逛逛吧</p>
+        </div>
     </div>
 </template>
 
@@ -42,13 +46,8 @@ export default {
             products: 'cartProducts',
             total: 'cartTotalPrice' 
         }),
-        alive: function() {
-            if(this.products.length > 0) {
-                console.log(this.products)
-                return true
-            } else {
-                return false
-            }
+        exist: function() {
+            return this.products.length > 0
         }
     },
     methods: {
@@ -74,7 +73,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex-basis: auto;
-    margin-bottom: 15px;
+    margin-top: 10px;
 }
 ul {
     margin: 0;
@@ -151,5 +150,14 @@ img {
 .red {
     color: #fe4544;
     font-size: 22px;
+}
+.empty img {
+    width: 20%;
+    margin-top: 100px;
+    filter: grayscale(100%);
+    filter: gray;
+}
+.empty p {
+    color: #888888;
 }
 </style>
