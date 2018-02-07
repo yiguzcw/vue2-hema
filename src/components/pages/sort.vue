@@ -36,14 +36,15 @@ export default {
 <style scoped>
 ul {
     width: 80%;
+    height: 600px;
     margin-top: 40px;
     list-style-type: none;
 }
 li {
-    cursor: pointer;
     margin-top: 40px;
     margin-right: 6%;
     float: left;
+    text-decoration: none;
 }
 li:nth-child(3n) {
     margin-right: 0;
@@ -53,6 +54,6 @@ img {
     height: 80px;
 }
 p {
-    text-decoration: none;
+    color: #000;
 }
 </style>

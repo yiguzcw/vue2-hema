@@ -9,22 +9,6 @@
             <img src="../../assets/images/avatar.jpg" alt="">
             <a>TeanLee</a>
         </div>
-        <div class="info-detail">
-            <ul>
-                <li>
-                    <span>0</span>
-                    <p>优惠券</p>
-                </li>
-                <li>
-                    <span>0.00</span>
-                    <p>礼品卡</p>
-                </li>
-                <li>
-                    <span>0</span>
-                    <p>电子券</p>
-                </li>
-            </ul>
-        </div>
     </div>
     <div class="order">
         <span class="left">我的订单</span>
@@ -94,7 +78,6 @@ export default {
     width: 90%;
     margin: 50px auto;
     height: 100px;
-    border: 1px solid #26a2ff;
 }
 .avater img {
     width: 50px;
@@ -111,26 +94,8 @@ export default {
 .order {
     width: 100%;
     height: 90px;
-    margin-top: -35px;
+    margin-top: -65px;
     padding: 5px;
-}
-.info-detail {
-    clear: both;
-}
-.info-detail ul {
-    list-style: none;
-}
-.info-detail li {
-    float: left;
-}
-.info-detail li:nth-child(2) {
-    margin: 0 50px;
-}
-.info-detail span {
-    font-size: 18px;
-}
-.info-detail p {
-    margin-top: 0;
 }
 .mint-cell-text {
     float: left;

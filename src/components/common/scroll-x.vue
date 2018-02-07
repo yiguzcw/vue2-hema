@@ -46,7 +46,6 @@ export default {
 .scroll-x {
     width: 100%;
     height: 320px;
-    margin-top: 200px;
     border-top: 1px solid #23a3ff;
     overflow-x: scroll;
     margin-left: -1px;
