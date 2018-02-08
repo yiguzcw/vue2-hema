@@ -17,7 +17,7 @@ export default {
         }
     },
     created: function() {
-        axios.get('https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/getScrollImg')
+        axios.get('https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/github-scroll')
         .then(response => {
             this.images = response.data.data.url
         })

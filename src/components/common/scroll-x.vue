@@ -30,7 +30,7 @@ export default {
         }
     },
     mounted: function() {
-        axios.get('https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/github-scroll')
+        axios.get('https://www.easy-mock.com/mock/5a223b51707056548f086d8b/hema/getIndexScrollX')
         .then(response => this.scrollGoods = response.data.data.goods)
         .catch(error => console.log(error))
     },
