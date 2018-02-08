@@ -30,6 +30,7 @@ export default {
 
 <style>
 .mint-swipe {
+    width: 100%;
     height: 200px;
     color: #fff;
     font-size: 30px;
@@ -37,10 +38,12 @@ export default {
     margin-bottom: 20px;
 }
 .mint-swipe-item {
+    width: 100%;
+    height: 200px;
     line-height: 200px;
 }
 .mint-swipe-item img {
     width: 100%;
-    height: 100%;
+    height: 200px;
 }
 </style>
