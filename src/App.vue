@@ -1,18 +1,13 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
+    <img src="./assets/logo.png">
     <router-view/>
-    <!-- <hm-tabber></hm-tabber> -->
   </div>
 </template>
 
 <script>
-import Tabber from '@/components/common/tabber'
 export default {
-  name: 'App',
-  components: {
-    'hm-tabber' :Tabber
-  }
+  name: 'App'
 }
 </script>
 
@@ -23,5 +18,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  margin-top: 60px;
 }
 </style>
