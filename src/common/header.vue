@@ -1,6 +1,6 @@
 <template>
-  <div>
-      <mt-search cancel-text="取消" placeholder="搜索"></mt-search>
+  <div class="header">
+      <input class="search" type="text"/>
   </div>
 </template>
 
@@ -10,6 +10,21 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.header {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.search {
+  width: 70%;
+  height: 100%;
+  border-radius: 10px;
+  border: 1px solid #000;
+  outline: none;
+}
+input{background: #999}
 </style>
